@@ -67,12 +67,22 @@ document.addEventListener('keydown', function (e) {
 
 // Difficulty selector event listener
 difficultySelect.addEventListener('change', function () {
+    console.log('Dificultad cambiada a:', this.value);
     currentDifficulty = DIFFICULTIES[this.value];
+    console.log('Nueva configuración:', currentDifficulty);
+
     if (gameState === 'playing') {
         // Reset ball speed with new difficulty
         const direction = ballSpeedX > 0 ? 1 : -1;
         ballSpeedX = currentDifficulty.ballSpeed * direction;
     }
+});
+
+// Inicializar la dificultad según el valor seleccionado por defecto
+window.addEventListener('DOMContentLoaded', function () {
+    const selectedValue = difficultySelect.value;
+    currentDifficulty = DIFFICULTIES[selectedValue];
+    console.log('Dificultad inicial:', selectedValue, currentDifficulty);
 });
 
 // Initialize ball speed
@@ -136,6 +146,13 @@ function draw() {
     ctx.textAlign = 'center';
     ctx.fillText(playerScore, WIDTH / 2 - 60, 40);
     ctx.fillText(aiScore, WIDTH / 2 + 60, 40);
+
+    // Difficulty indicator
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+    ctx.font = '14px Arial';
+    ctx.textAlign = 'left';
+    const difficultyText = difficultySelect.options[difficultySelect.selectedIndex].text;
+    ctx.fillText('Dificultad: ' + difficultyText, 10, HEIGHT - 15);
 
     // Game state messages
     if (gameState === 'countdown') {
