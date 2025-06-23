@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game - Juego Clásico en HTML5</title>
+    <meta name="description" content="¡Juega al clásico Pong con tres niveles de dificultad! Creado con HTML5 Canvas y JavaScript puro. Totalmente gratis y sin instalación.">
+    <meta name="keywords" content="pong, juego, game, html5, canvas, javascript, gratis, online, clásico">
+    <meta name="author" content="SecondPort">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://secondport.github.io/pong-game/">
+    <meta property="og:title" content="Pong Game - Juego Clásico en HTML5">
+    <meta property="og:description" content="¡Juega al clásico Pong con tres niveles de dificultad! Creado con HTML5 Canvas y JavaScript puro.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://secondport.github.io/pong-game/">
+    <meta property="twitter:title" content="Pong Game - Juego Clásico en HTML5">
+    <meta property="twitter:description" content="¡Juega al clásico Pong con tres niveles de dificultad! Creado con HTML5 Canvas y JavaScript puro.">
+    <meta property="twitter:creator" content="@SecondPort1A4">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#232323">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23000' width='100' height='100'/%3E%3Crect fill='%23fff' x='10' y='30' width='4' height='40'/%3E%3Crect fill='%23fff' x='86' y='30' width='4' height='40'/%3E%3Crect fill='%23fff' x='48' y='48' width='4' height='4'/%3E%3C/svg%3E">
+</head>
+
+<body>
+    <header>
+        <h1>🏓 Pong Game</h1>
+        <p class="subtitle">El clásico juego recreado con HTML5</p>
+    </header>
+    
+    <main>
+        <div class="difficulty-selector">
+            <label for="difficulty">Dificultad:</label>
+            <select id="difficulty" aria-label="Selector de dificultad del juego">
+                <option value="easy">🟢 Fácil</option>
+                <option value="medium" selected>🟡 Medio</option>
+                <option value="hard">🔴 Difícil</option>
+            </select>
+        </div>
+        
+        <canvas id="pong" width="800" height="500" aria-label="Canvas del juego Pong">
+            Tu navegador no soporta HTML5 Canvas. Por favor actualiza tu navegador.
+        </canvas>
+        
+        <div class="controls">
+            <p>
+                <strong>Controles:</strong> 
+                <span>🖱️ Mover el mouse para mover la paleta</span> | 
+                <span>⏯️ Espacio = Pausa/Reanudar</span>
+            </p>
+        </div>
+        
+        <div class="game-info">
+            <div class="info-card">
+                <h3>🎯 Objetivo</h3>
+                <p>Evita que la pelota pase tu paleta y trata de superar a la IA</p>
+            </div>
+            <div class="info-card">
+                <h3>🏆 Dificultades</h3>
+                <ul>
+                    <li><strong>Fácil:</strong> IA lenta, perfecta para principiantes</li>
+                    <li><strong>Medio:</strong> IA equilibrada, nivel recomendado</li>
+                    <li><strong>Difícil:</strong> IA rápida, ¡todo un desafío!</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Creado con ❤️ por <a href="https://github.com/SecondPort" target="_blank" rel="noopener">SecondPort</a></p>
+        <p><a href="https://github.com/SecondPort/pong-game" target="_blank" rel="noopener">Ver código en GitHub</a></p>
+    </footer>
+    
+    <script src="game.js"></script>
+</body>
+
+</html>
