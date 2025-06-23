@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Pong Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Simple Pong Game</h1>
+    <div class="difficulty-selector">
+        <label>Dificultad:</label>
+        <select id="difficulty">
+            <option value="easy">Fácil</option>
+            <option value="medium" selected>Medio</option>
+            <option value="hard">Difícil</option>
+        </select>
+    </div>
+    <canvas id="pong" width="800" height="500"></canvas>
+    <div class="controls">
+        <p>Controles: Mover el mouse para mover la paleta | Espacio = Pausa</p>
+    </div>
+    <script src="game.js"></script>
+</body>
+
+</html>
